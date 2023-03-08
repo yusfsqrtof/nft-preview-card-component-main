@@ -1,0 +1,217 @@
+/* css reset from joshwcomeau.com */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+:root {
+    --clr-bg-100: #fff;
+    --clr-bg-900: #000;
+    --clr-neutral-100: #fff;
+    --clr-neutral-900: #000;
+    --font-light: 300;
+    --font-regular: 400;
+    --font-semibold: 600;
+    --clr-primary-1: hsl(215, 51%, 70%);
+    --clr-primary-2: hsl(178, 100%, 50%);
+    --clr-primary-20: hsla(178, 100%, 50%, .6);
+    --clr-neutral-1: hsl(217, 54%, 11%);
+    --clr-neutral-2: hsl(216, 50%, 16%);
+    --clr-neutral-3: hsl(215, 32%, 27%);
+    --clr-neutral-4: hsl(0, 0%, 100%);
+}
+
+
+/* @font-face rule practice */
+
+@font-face {
+    font-family: outfitLight;
+    font-weight: var(--font-light);
+    src: url('/fonts/Outfit-Light.ttf');
+}
+
+@font-face {
+    font-family: outfitRegular;
+    font-weight: var(--font-regular);
+    src: url('/fonts/Outfit-Regular.ttf');
+}
+
+@font-face {
+    font-family: outfitSemiBold;
+    font-weight: var(--font-semibold);
+    src: url('/fonts/Outfit-SemiBold.ttf');
+}
+
+body {
+    display: grid;
+    place-content: center;
+    padding: 0 1rem;
+    background: var(--clr-neutral-1);
+    color: var(--clr-neutral-100);
+    font-family: outfitRegular;
+}
+
+main {
+    max-width: calc(375px - 2rem);
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .75rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: var(--clr-neutral-2);
+}
+
+.overlay-container {
+    position: relative;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.overlay-container img {
+    border-radius: 6px;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    z-index: 9;
+    overflow: hidden;
+    opacity: 0;
+    background: var(--clr-primary-20);
+    transition: .45s;
+    border-radius: 6px;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.overlay-container:hover .overlay {
+    opacity: 1;
+    height: 100%;
+}
+
+h1 {
+    font-size: 21px;
+    font-family: outfitSemiBold;
+    margin: 15px 0 0;
+    cursor: pointer;
+}
+
+h1:hover {
+    color: var(--clr-primary-2);
+}
+
+p.def {
+    color: var(--clr-primary-1);
+    opacity: .75;
+    font-size: 1rem;
+    font-weight: var(--font-light);
+}
+
+.mid-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 17px 0;
+}
+
+.left,
+.right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1rem;
+}
+
+.left span.price {
+    color: var(--clr-primary-2);
+}
+
+.right span.time {
+    color: var(--clr-neutral-4);
+    opacity: .3;
+}
+
+figure {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-top: 1px solid rgba(255, 255, 255, .5);
+    border-top: 1px solid var(--clr-neutral-3);
+    padding: 17px 0 7px;
+    font-size: 1rem;
+}
+
+figure img.avatar {
+    border-radius: 50%;
+    border: 1px solid var(--clr-neutral-100);
+}
+
+figcaption p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, .5);
+}
+
+figcaption p span.creator {
+    color: rgba(255, 255, 255, .8);
+    cursor: pointer;
+}
+
+figcaption p span.creator:hover {
+    color: var(--clr-primary-2);
+}
